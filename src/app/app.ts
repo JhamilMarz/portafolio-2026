@@ -68,20 +68,20 @@ export class App implements OnInit, OnDestroy {
   profile = {
     name: 'Hola, Soy Yamil',
     initials: 'YM',
-    avatar: '/profile.jpg',
+    avatar: 'profile.jpg',
     role: 'Full Stack Developer',
     location: 'La Paz, Bolivia',
     email: 'jhamilmaper93@gmail.com',
     // Reemplaza con el enlace real de tu CV en Drive
-    cvUrl: 'https://drive.google.com/file/d/REEMPLAZA-CON-TU-ID-DE-DRIVE/view?usp=sharing',
-    bio: 'Diseño y construyo productos digitales end-to-end. Más de 5 años traduciendo ideas ambiciosas en sistemas escalables, interfaces precisas y experiencias que la gente realmente quiere usar.',
+    cvUrl: 'https://drive.google.com/file/d/13L6nPggJedyf9x-1B7MqdKUgnnfS_vmP/view?usp=sharing',
+    bio: 'Ingeniero electrónico. entusiasta de las nuevas tecnologías, gran parte de mi tiempo la dedico a la investigación y desarrollo, más de 5 años de experiencia desarrollando, aprendiendo y trabajando con diversas tecnologías relacionadas al mundo del desarrollo de aplicaciones y gestión de datos.',
   };
 
   socials: Social[] = [
     { name: 'GitHub', icon: 'bi-github', url: 'https://github.com/JhamilMarz' },
     { name: 'LinkedIn', icon: 'bi-linkedin', url: 'https://www.linkedin.com/in/yamil-m-7b9411387' },
     /* { name: 'Twitter / X', icon: 'bi-twitter-x', url: 'https://x.com/' }, */
-    { name: 'Email', icon: 'bi-envelope', url: 'mailto:hola@alexmoreno.dev' },
+    /* { name: 'Email', icon: 'bi-envelope', url: '' }, */
   ];
 
   experience: ExperienceItem[] = [
@@ -116,7 +116,7 @@ export class App implements OnInit, OnDestroy {
 
   ventures: Venture[] = [
     {
-      name: 'CrmDentistas',
+      name: 'CrmDent',
       tag: 'SaaS · 2026',
       description: 'Plataforma de gestión de clientes y gestor de citas médicas.',
       status: 'Activo',
@@ -272,5 +272,25 @@ export class App implements OnInit, OnDestroy {
     const top = el.getBoundingClientRect().top + window.scrollY - offset;
 
     window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  private readonly user = 'jhamilmaper93';
+  private readonly domain = 'gmail';
+  private readonly tld = 'com';
+
+  readonly email = signal(`${this.user}@${this.domain}.${this.tld}`);
+  readonly isCopied = signal(false);
+
+  async copyToClipboard(): Promise<void> {
+    try {
+      await navigator.clipboard.writeText(this.email());
+      this.isCopied.set(true);
+
+      setTimeout(() => {
+        this.isCopied.set(false);
+      }, 2000);
+    } catch (err) {
+      console.error('Error al copiar:', err);
+    }
   }
 }

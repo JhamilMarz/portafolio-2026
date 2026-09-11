@@ -66,7 +66,27 @@
         </div>
         <div>
           <span class="meta-label">Contacto</span>
-          <span class="meta-value">{{ profile.email }}</span>
+          <span class="meta-value">
+
+  <button 
+    type="button"
+    class="btn-cv d-inline-flex align-items-center gap-1 transition-all"
+    [class.btn-primary]="!isCopied()"
+    [class.btn-success]="isCopied()"
+    [disabled]="isCopied()"
+    (click)="copyToClipboard()"
+    [attr.aria-label]="isCopied() ? 'Correo copiado' : 'Copiar correo al portapapeles'"
+    [title]="isCopied() ? '¡Copiado!' : 'Copiar al portapapeles'">
+    
+    @if (isCopied()) {
+      <i class="bi bi-check-lg"></i>
+      <span>¡Copiado!</span>
+    } @else {
+      <i class="bi bi-copy"></i>
+      <span>Copiar correo</span>
+    }
+  </button>
+          </span>
         </div>
         <div>
           <span class="meta-label">Disponibilidad</span>
@@ -196,9 +216,9 @@
     <!-- FOOTER -->
     <footer class="footer">
       <span>
-        © {{ year }} {{ profile.name }} — Diseñado y desarrollado con atención al detalle.
+        © {{ profile.name }} — September 2026.
       </span>
-      <a [href]="'mailto:' + profile.email">{{ profile.email }}</a>
+      <!-- <a [href]="'mailto:' + profile.email">{{ profile.email }}</a> -->
     </footer>
   </main>
 </div>
