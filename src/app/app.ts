@@ -74,7 +74,7 @@ export class App implements OnInit, OnDestroy {
     email: 'jhamilmaper93@gmail.com',
     // Reemplaza con el enlace real de tu CV en Drive
     cvUrl: 'https://drive.google.com/file/d/13L6nPggJedyf9x-1B7MqdKUgnnfS_vmP/view?usp=sharing',
-    bio: 'Ingeniero electrónico. entusiasta de las nuevas tecnologías, gran parte de mi tiempo la dedico a la investigación y desarrollo, más de 5 años de experiencia desarrollando, aprendiendo y trabajando con diversas tecnologías relacionadas al mundo del desarrollo de aplicaciones y gestión de datos.',
+    bio: 'Ingeniero electrónico, entusiasta de las nuevas tecnologías, gran parte de mi tiempo la dedico a la investigación y desarrollo, más de 5 años de experiencia desarrollando, aprendiendo y trabajando con diversas tecnologías relacionadas al mundo del desarrollo de aplicaciones y gestión de datos.',
   };
 
   socials: Social[] = [
