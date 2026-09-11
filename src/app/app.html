@@ -2,7 +2,12 @@
   <!-- ============================= TIMELINE / NAVBAR ============================= -->
   <aside class="timeline">
     <header class="brand">
-      <div class="brand-mark">{{ profile.initials }}</div>
+      <img
+        class="brand-avatar"
+        [src]="profile.avatar"
+        [alt]="profile.name"
+        loading="lazy"
+      />
       <div class="brand-text">
         <span class="brand-name">{{ profile.name }}</span>
         <span class="brand-role">{{ profile.role }}</span>
@@ -49,8 +54,8 @@
     <section id="about" class="section hero">
       <span class="eyebrow">01 — Introducción</span>
       <h1 class="hero-title">
-        Full Stack Developer construyendo productos digitales con
-        <em>precisión editorial</em>.
+        Acerca de mí
+        <em></em>.
       </h1>
       <p class="hero-lead">{{ profile.bio }}</p>
 
@@ -156,7 +161,7 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="section">
+    <!-- <section id="projects" class="section">
       <div class="section-head">
         <span class="eyebrow">05 — Trabajo seleccionado</span>
         <h2>Proyectos</h2>
@@ -186,7 +191,7 @@
           </a>
         }
       </div>
-    </section>
+    </section> -->
 
     <!-- FOOTER -->
     <footer class="footer">

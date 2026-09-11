@@ -60,61 +60,76 @@ export class App implements OnInit, OnDestroy {
     { id: 'experience', label: 'Experiencia', icon: 'bi-briefcase' },
     { id: 'ventures', label: 'Emprendimientos', icon: 'bi-rocket-takeoff' },
     { id: 'tech', label: 'Tecnologías', icon: 'bi-stack' },
-    { id: 'projects', label: 'Proyectos', icon: 'bi-code-square' },
+    /* { id: 'projects', label: 'Proyectos', icon: 'bi-code-square' }, */
   ];
 
   activeSection = signal<string>('about');
 
   profile = {
-    name: 'Yamil Marzana',
+    name: 'Hola, Soy Yamil',
     initials: 'YM',
+    avatar: '/profile.jpg',
     role: 'Full Stack Developer',
     location: 'La Paz, Bolivia',
     email: 'jhamilmaper93@gmail.com',
     // Reemplaza con el enlace real de tu CV en Drive
     cvUrl: 'https://drive.google.com/file/d/REEMPLAZA-CON-TU-ID-DE-DRIVE/view?usp=sharing',
-    bio: 'Diseño y construyo productos digitales end-to-end. Más de 7 años traduciendo ideas ambiciosas en sistemas escalables, interfaces precisas y experiencias que la gente realmente quiere usar.',
+    bio: 'Diseño y construyo productos digitales end-to-end. Más de 5 años traduciendo ideas ambiciosas en sistemas escalables, interfaces precisas y experiencias que la gente realmente quiere usar.',
   };
 
   socials: Social[] = [
-    { name: 'GitHub', icon: 'bi-github', url: 'https://github.com/' },
-    { name: 'LinkedIn', icon: 'bi-linkedin', url: 'https://linkedin.com/in/' },
-    { name: 'Twitter / X', icon: 'bi-twitter-x', url: 'https://x.com/' },
+    { name: 'GitHub', icon: 'bi-github', url: 'https://github.com/JhamilMarz' },
+    { name: 'LinkedIn', icon: 'bi-linkedin', url: 'https://www.linkedin.com/in/yamil-m-7b9411387' },
+    /* { name: 'Twitter / X', icon: 'bi-twitter-x', url: 'https://x.com/' }, */
     { name: 'Email', icon: 'bi-envelope', url: 'mailto:hola@alexmoreno.dev' },
   ];
 
   experience: ExperienceItem[] = [
     {
-      role: 'Senior Full Stack Developer',
-      company: 'Nexora Labs',
-      period: '2023 — Presente',
-      location: 'Madrid, ES · Remoto',
+      role: 'Analista de software',
+      company: 'Exalogics SRL',
+      period: 'Mayo 2024 — Enero 2026',
+      location: 'La Paz, Presencial',
       description:
-        'Lidero el diseño técnico de una plataforma SaaS B2B con +200k usuarios activos. Responsable de la arquitectura de microservicios, el sistema de diseño compartido y la estrategia de rendimiento del frontend.',
-      stack: ['Angular', 'Node.js', 'PostgreSQL', 'AWS', 'Docker'],
+        'Lideré el desarrollo de aplicaciones web utilizando Angular y React para el frontend, y Node.js y .NET/C# para el backend, garantizando una integración fluida con SQL Server. Modernicé sistemas heredados mediante la migración de arquitecturas monolíticas a microservicios RESTful, reduciendo la deuda técnica y mejorando la estabilidad del sistema en un 30%.',
+      stack: ['Angular', '.NET', 'Node.js', 'PostgreSQL', 'Docker'],
     },
     {
-      role: 'Full Stack Developer',
-      company: 'Fintech Solutions',
-      period: '2021 — 2023',
-      location: 'Barcelona, ES',
+      role: 'Analista de software',
+      company: 'Kerkus Corredores',
+      period: 'Mayo 2023 — Abril 2024',
+      location: 'La Paz, Presencial',
       description:
-        'Desarrollo de APIs de pagos de alto tráfico y dashboards analíticos en tiempo real. Reduje el tiempo de carga del frontend en un 62% y lideré la migración a una arquitectura event-driven.',
-      stack: ['React', '.NET', 'MongoDB', 'Redis', 'Azure'],
+        'Diseñé e implementé un almacén de datos (Data Warehouse) centralizado en SQL Server para consolidar datos de producción de seguros, pólizas, conciliación bancaria y operaciones. Desarrollé flujos de trabajo ETL utilizando procedimientos almacenados de SQL Server y servicios web/API para la extracción, transformación, estandarización y carga de datos. Integré fuentes de datos heterogéneas, incluyendo informes de conciliación bancaria, un sistema transaccional heredado (legacy) y registros operativos internos basados ​​en Excel. Procesé y consolidé aproximadamente 150.000 registros mensuales, implementando reglas de negocio, estados de validación, conciliación y controles de calidad de datos para garantizar la integridad, trazabilidad y auditabilidad. Desarrollé aplicaciones empresariales utilizando Angular, Node.js y TypeScript, incluyendo la integración con un núcleo bancario (core bancario) mediante API SOAP.',
+      stack: ['Angular', '.NET', 'Node.js', 'Python', 'Azure', 'SQL Server'],
     },
     {
-      role: 'Frontend Developer',
-      company: 'Studio Kinetik',
-      period: '2019 — 2021',
-      location: 'Valencia, ES',
+      role: 'Analista de software',
+      company: 'Saffiro SRL',
+      period: 'Septiembre 2020 — Abril 2023',
+      location: 'La Paz, Presencial',
       description:
-        'Construcción de interfaces para clientes de retail y banca. Colaboración directa con diseño para llevar sistemas visuales complejos a producción con foco en accesibilidad.',
-      stack: ['Vue', 'TypeScript', 'SASS', 'Storybook'],
+        'Desarrollé y optimicé aplicaciones web empresariales utilizando Angular para el frontend y .NET/C# para los servicios de backend, garantizando alta disponibilidad y rendimiento. Modernicé sistemas heredados mediante la migración de arquitecturas monolíticas a microservicios RESTful, reduciendo la deuda técnica y mejorando la estabilidad del sistema en un 30%.',
+      stack: ['Angular', '.NET', 'Oracle'],
     },
   ];
 
   ventures: Venture[] = [
     {
+      name: 'CrmDentistas',
+      tag: 'SaaS · 2026',
+      description: 'Plataforma de gestión de clientes y gestor de citas médicas.',
+      status: 'Activo',
+      url: '#',
+    },
+    {
+      name: 'InventariosVentas',
+      tag: 'SaaS · 2025',
+      description: 'Plataforma de gestión de inventarios y ventas para pequeñas empresas.',
+      status: 'Activo',
+      url: '#',
+    },
+    /* {
       name: 'DevFlow',
       tag: 'SaaS · 2024',
       description:
@@ -145,25 +160,39 @@ export class App implements OnInit, OnDestroy {
         'Librería de componentes accesibles para Angular, mantenida por la comunidad y usada en más de 40 proyectos.',
       status: 'Open Source',
       url: '#',
-    },
+    }, */
   ];
 
   techGroups: TechGroup[] = [
     {
       category: 'Frontend',
-      items: ['Angular', 'React', 'Vue', 'TypeScript', 'RxJS', 'Tailwind'],
+      items: ['Angular', 'React'],
     },
     {
       category: 'Backend',
-      items: ['Node.js', 'NestJS', '.NET', 'Python', 'Go', 'GraphQL'],
+      items: ['Node.js', 'NestJS', '.NET'],
     },
     {
       category: 'Datos',
-      items: ['PostgreSQL', 'MongoDB', 'Redis', 'Prisma', 'Elasticsearch'],
+      items: ['PostgreSQL', 'MongoDB', 'Redis'],
     },
     {
       category: 'DevOps & Cloud',
-      items: ['Docker', 'Kubernetes', 'AWS', 'Azure', 'GitHub Actions'],
+      items: ['Docker', 'AWS', 'Azure', 'GitHub Actions'],
+    },
+    {
+      category: 'Data & Analytics Languages',
+      items: ['Python (Pandas, Numpy)', 'Data Warehouse MOdeling', 'Sql (T-SQL, PLSQL)'],
+    },
+    {
+      category: 'Tools & Methods',
+      items: [
+        'Github',
+        'Postman',
+        'AI Agents Integration (Claide Code)',
+        'SDD Specification Driven Development',
+        'Agile/Scrum',
+      ],
     },
   ];
 

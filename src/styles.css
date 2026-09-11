@@ -43,6 +43,7 @@ body {
 h1, h2, h3, h4 {
   font-family: 'Inter Tight', 'Inter', sans-serif;
   font-weight: 600;
+  font-size: 5em;
   letter-spacing: -0.02em;
   margin: 0;
 }
@@ -96,19 +97,15 @@ ul {
   gap: 0.85rem;
 }
 
-.brand-mark {
-  width: 42px;
-  height: 42px;
+.brand-avatar {
+  width: 64px;              /* 👈 tamaño desktop: agrándalo aquí */
+  height: 64px;
   border-radius: 50%;
-  background: var(--ink);
-  color: var(--bg);
-  display: grid;
-  place-items: center;
-  font-family: 'Inter Tight', sans-serif;
-  font-weight: 600;
-  font-size: 0.85rem;
-  letter-spacing: 0.02em;
+  object-fit: cover;
+  object-position: center;
   flex-shrink: 0;
+  border: 1px solid var(--line-strong);
+  background: var(--surface);
 }
 
 .brand-text {
@@ -121,7 +118,7 @@ ul {
 .brand-name {
   font-family: 'Inter Tight', sans-serif;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1.35rem;
   letter-spacing: -0.01em;
 }
 
@@ -289,7 +286,7 @@ ul {
 }
 
 .hero-title {
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  font-size: clamp(2.2rem, 4vw, 2rem);
   line-height: 1.02;
   letter-spacing: -0.035em;
   font-weight: 600;
